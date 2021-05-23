@@ -1,0 +1,28 @@
+{
+  "name": "image-shrinker",
+  "productName":"ImageShrinker",
+  "version": "1.0.0",
+  "description": "Desktop App to optimize images",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=false --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"ImageShrinker\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+  },
+  "author": "shuxton",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^12.0.9",
+    "electron-packager": "^15.2.0",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "electron-log": "^4.3.5",
+    "imagemin": "^7.0.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "slash": "^3.0.0"
+  }
+}
